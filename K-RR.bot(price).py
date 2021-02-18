@@ -1,13 +1,13 @@
-import discord
-from discord.ext import commands
+# import discord
+# from discord.ext import commands
 import time
 import csv
 import pandas as pd
 
-
 f_path = "~/Documents/PriceLogger/price_list.csv"
 last_row = pd.read_csv(f_path).iloc[-1]
 print(last_row)
+print(type(last_row))
 
 '''
 f = open(f_path, 'r', encoding='utf-8')
