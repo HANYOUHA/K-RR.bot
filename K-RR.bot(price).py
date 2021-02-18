@@ -7,8 +7,8 @@ import pandas as pd
 f_path = "~/Documents/PriceLogger/price_list.csv"
 last_row = pd.read_csv(f_path).iloc[-1]
 
-message = "현재 "+ last_row[0] +" RR 인게임 자원 가격은 다음과 같습니다.\n석유: "
-                   + last_row[1]  +"\n광물: " + last_row[2]
+message = "현재 " + last_row[0] + " RR 인게임 자원 가격은 다음과 같습니다.\n" \
+                              "석유: " + last_row[1] + "\n광물: " + last_row[2]
 
 print(message)
 '''
