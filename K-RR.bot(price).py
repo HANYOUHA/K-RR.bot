@@ -1,7 +1,17 @@
-import discord
-from discord.ext import commands
+# import discord
+# from discord.ext import commands
 import time
+import csv
+import pandas as pd
 
+f_path = "~/Documents/PriceLogger/price_list.csv"
+last_row = pd.read_csv(f_path).iloc[-1]
+
+message = "현재 " + str(last_row[0]) + " RR 인게임 자원 가격은 다음과 같습니다.\n" \
+                              "석유: " + str(last_row[1]) + "\n광물: " + str(last_row[2])
+
+print(message)
+'''
 client = commands.Bot(command_prefix='!')
 
 @client.command()
@@ -10,10 +20,7 @@ async def 안녕(ctx):
 
 @client.command()
 async def 가격(ctx):
-    await ctx.send("현재 "+ time +" RR 인게임 자원 가격은 다음과 같습니다.\n석유: "
-                   + oil +"\n광물: " + ore + "\n우라늄: " + uranium + "\n다이아몬드: "
-                   + diamonds + "\n헬륨: " + helium + "\n라이발륨: " + rivalium +
-                   "\n탱크: " + tanks + "\n전투기: " + aircrafts + "\n미사일:" + missiles +
-                   "\n폭격기: " + bombers + "\n드론: " + drones)
+    await ctx.send()
 
 client.run(디코봇 토큰)
+'''
