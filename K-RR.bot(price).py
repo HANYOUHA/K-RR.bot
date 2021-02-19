@@ -21,37 +21,37 @@ print(message)
 '''
 
 oil_price= 
-"{:,}".format(int(str(last_row[1])))
+"{:,}".format(str(last_row[1]))
 
 ore_price= 
-"{:,}".format(int(str(last_row[2])))
+"{:,}".format(str(last_row[2]))
 
 uranium_price
-= "{:,}".format(int(str(last_row[3])))
+= "{:,}".format(str(last_row[3]))
 
 diamonds_price = 
-"{:,}".format(int(str(last_row[4])))
+"{:,}".format(str(last_row[4]))
 
 helium_price = 
-"{:,}".format(int(str(last_row[5])))
+"{:,}".format(str(last_row[5]))
 
 rivalium_price = 
-"{:,}".format(int(str(last_row[6])))
+"{:,}".format(str(last_row[6]))
 
 tanks_price = 
-"{:,}".format(int(str(last_row[7])))
+"{:,}".format(str(last_row[7]))
 
 aircrafts_price = 
-"{:,}".format(int(str(last_row[8])))
+"{:,}".format(str(last_row[8]))
 
 missiles_price = 
-"{:,}".format(int(str(last_row[9])))
+"{:,}".format(str(last_row[9]))
 
 bombers_price = 
-"{:,}".format(int(str(last_row[10])))
+"{:,}".format(str(last_row[10]))
 
 drones_price = 
-"{:,}".format(int(str(last_row[11])))
+"{:,}".format(str(last_row[11]))
 
 
 client = commands.Bot(command_prefix='!')
