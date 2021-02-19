@@ -101,4 +101,4 @@ async def 도움말(ctx):
 
 file = open('../token.txt', 'r')
 token = file.read()
-client.run(token)
+app.run(token)
