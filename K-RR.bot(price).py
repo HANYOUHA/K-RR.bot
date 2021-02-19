@@ -8,38 +8,17 @@ import pandas as pd
 f_path = "~/Documents/PriceLogger/price_list.csv"
 last_row = pd.read_csv(f_path).iloc[-1]
 
-oil_price=
-"{:,}".format(str(last_row[1]))
-
-ore_price=
-"{:,}".format(str(last_row[2]))
-
-uranium_price
-= "{:,}".format(str(last_row[3]))
-
-diamonds_price =
-"{:,}".format(str(last_row[4]))
-
-helium_price =
-"{:,}".format(str(last_row[5]))
-
-rivalium_price =
-"{:,}".format(str(last_row[6]))
-
-tanks_price =
-"{:,}".format(str(last_row[7]))
-
-aircrafts_price =
-"{:,}".format(str(last_row[8]))
-
-missiles_price =
-"{:,}".format(str(last_row[9]))
-
-bombers_price =
-"{:,}".format(str(last_row[10]))
-
-drones_price =
-"{:,}".format(str(last_row[11]))
+oil_price="{:,}".format(str(last_row[1]))
+ore_price="{:,}".format(str(last_row[2]))
+uranium_price= "{:,}".format(str(last_row[3]))
+diamonds_price ="{:,}".format(str(last_row[4]))
+helium_price ="{:,}".format(str(last_row[5]))
+rivalium_price ="{:,}".format(str(last_row[6]))
+tanks_price ="{:,}".format(str(last_row[7]))
+aircrafts_price ="{:,}".format(str(last_row[8]))
+missiles_price ="{:,}".format(str(last_row[9]))
+bombers_price ="{:,}".format(str(last_row[10]))
+drones_price ="{:,}".format(str(last_row[11]))
 
 client = commands.Bot(command_prefix='!')
 
