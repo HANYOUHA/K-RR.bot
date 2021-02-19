@@ -20,17 +20,38 @@ token = file.read()
 print(message)
 '''
 
-oil = "{:,}".format(int(oil))
-ore = "{:,}".format(int(ore))
-uranium = "{:,}".format(int(uranium))
-diamonds = "{:,}".format(int(diamonds))
-helium = "{:,}".format(int(helium))
-rivalium = "{:,}".format(int(rivalium))
-tanks = "{:,}".format(int(tanks))
-aircrafts = "{:,}".format(int(aircrafts))
-missiles = "{:,}".format(int(missiles))
-bombers = "{:,}".format(int(bombers))
-drones = "{:,}".format(int(drones))
+oil_price= 
+"{:,}".format(int(str(last_row[1])))
+
+ore_price= 
+"{:,}".format(int(str(last_row[2])))
+
+uranium_price
+= "{:,}".format(int(str(last_row[3])))
+
+diamonds_price = 
+"{:,}".format(int(str(last_row[4])))
+
+helium_price = 
+"{:,}".format(int(str(last_row[5])))
+
+rivalium_price = 
+"{:,}".format(int(str(last_row[6])))
+
+tanks_price = 
+"{:,}".format(int(str(last_row[7])))
+
+aircrafts_price = 
+"{:,}".format(int(str(last_row[8])))
+
+missiles_price = 
+"{:,}".format(int(str(last_row[9])))
+
+bombers_price = 
+"{:,}".format(int(str(last_row[10])))
+
+drones_price = 
+"{:,}".format(int(str(last_row[11])))
 
 
 client = commands.Bot(command_prefix='!')
@@ -41,57 +62,57 @@ async def 안녕(ctx):
 
 @client.command()
 async def 가격(ctx):
-    await ctx.send("현재 시각 "+ last_row[0] +" 자원 시세\n석유: " + str(last_row[1]) + "\n광물: " + str(last_row[2]) + "\n우라늄: " + str(last_row[3]) + "\n다이아몬드: " + str(last_row[4]) + "\n헬륨: " + str(last_row[5]) + "\n라이발륨: " + str(last_row[6]) + "\n탱크: " + str(last_row[7]) + "\n전투기: " + str(last_row[8]) + "\n미사일:" + str(last_row[9]) + "\n폭격기: " + str(last_row[10]) + "\n드론: " + str(last_row[11]))
+    await ctx.send("현재 시각 "+ last_row[0] +" 자원 시세\n석유: " + oil_price + "\n광물: " + ore_price + "\n우라늄: " + uranium_price + "\n다이아몬드: " + diamonds_price + "\n헬륨: " + helium_price + "\n라이발륨: " + rivalium_price + "\n탱크: " + tanks_price + "\n전투기: " + str(last_row[8]) + "\n미사일:" + aircrafts_price + "\n폭격기: " + bombers_price + "\n드론: " + drones_price)
     
 @client.command()
 async def 석유(ctx):
-    await ctx.send("현재 시각 "+ last_row[0] + "\n" + str(last_row[1]))
+    await ctx.send("현재 시각 "+ last_row[0] + "\n" + oil_price)
     
 @client.command()
 async def 광물(ctx):
-    await ctx.send("현재 시각 "+ last_row[0] + "\n" + str(last_row[2]))
+    await ctx.send("현재 시각 "+ last_row[0] + "\n" + ore_price)
     
 @client.command()
 async def 우라늄(ctx):
-    await ctx.send("현재 시각 "+ last_row[0] + "\n" + str(last_row[3]))
+    await ctx.send("현재 시각 "+ last_row[0] + "\n" + uranium_price)
     
 @client.command()
 async def 다이아몬드(ctx):
-    await ctx.send("현재 시각 "+ last_row[0] + "\n"+ str(last_row[4]))
+    await ctx.send("현재 시각 "+ last_row[0] + "\n"+ diamonds_price)
     
 @client.command()
 async def 헬륨(ctx):
-    await ctx.send("현재 시각 "+ last_row[0] + "\n"+ str(last_row[5]))
+    await ctx.send("현재 시각 "+ last_row[0] + "\n"+ helium_price)
 
     
 @client.command()
 async def 라이발륨(ctx):
-    await ctx.send("현재 시각 "+ last_row[0] + "\n"+ str(rlast_row[6]))
+    await ctx.send("현재 시각 "+ last_row[0] + "\n"+ rivalium_price)
     
 @client.command()
 async def 탱크(ctx):
-    await ctx.send("현재 시각 "+ last_row[0] + "\n"+ str(last_row[7]))
+    await ctx.send("현재 시각 "+ last_row[0] + "\n"+ tanks_price)
 
     
 @client.command()
 async def 전투기(ctx):
-    await ctx.send("현재 시각 "+ last_row[0] + "\n"+ str(last_row[8]))
+    await ctx.send("현재 시각 "+ last_row[0] + "\n"+ aircrafts_price)
 
     
 @client.command()
 async def 미사일(ctx):
-    await ctx.send("현재 시각 "+ last_row[0] + "\n"+ str(last_row[9]))
+    await ctx.send("현재 시각 "+ last_row[0] + "\n"+ missiles_price)
 
     
     
 @client.command()
 async def 폭격기(ctx):
-    await ctx.send("현재 시각 "+ last_row[0] + "\n"+ str(last_row[10]))
+    await ctx.send("현재 시각 "+ last_row[0] + "\n"+ bombers_price)
 
     
 @client.command()
 async def 드론(ctx):
-    await ctx.send("현재 시각 "+ last_row[0] + "\n"+ str(last_row[11]))
+    await ctx.send("현재 시각 "+ last_row[0] + "\n"+ drones_price)
 
     
 @client.command()
