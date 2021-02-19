@@ -22,6 +22,13 @@ drones_price = "{:,}".format(int(last_row[11]))
 
 client = commands.Bot(command_prefix='!')
 
+@app.event
+async def on_ready():
+    print('다음으로 로그인합니다: 봇무장관 1.0')
+    print(app.user.name)
+    print('connection was succesful')
+    await app.change_presence(status=discord.Status.online, activity=None)
+
 @client.command()
 async def 안녕(ctx):
     await ctx.send('안녕하세요')
