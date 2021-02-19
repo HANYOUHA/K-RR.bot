@@ -30,8 +30,7 @@ async def 안녕(ctx):
 @client.command()
 async def 가격(ctx):
     await ctx.send("현재 시각 " + last_row[
-        0] + " 자원 시세\n석유: " + oil_price + "\n광물: " + ore_price + "\n우라늄: " + uranium_price + "\n다이아몬드: " + diamonds_price + "\n헬륨: " + helium_price + "\n라이발륨: " + rivalium_price + "\n탱크: " + tanks_price + "\n전투기: " + str(
-        last_row[8]) + "\n미사일:" + aircrafts_price + "\n폭격기: " + bombers_price + "\n드론: " + drones_price)
+        0] + " 자원 시세\n석유: " + oil_price + "\n광물: " + ore_price + "\n우라늄: " + uranium_price + "\n다이아몬드: " + diamonds_price + "\n헬륨: " + helium_price + "\n라이발륨: " + rivalium_price + "\n탱크: " + tanks_price + "\n전투기: " + aircrafts_price + "\n미사일:" + missiles_price + "\n폭격기: " + bombers_price + "\n드론: " + drones_price)
 
 
 @client.command()
