@@ -86,7 +86,6 @@ async def 광물(ctx):
 
 @app.command()
 async def 우라늄(ctx):
-    price()
     await ctx.send(price("uranium"))
 
 
