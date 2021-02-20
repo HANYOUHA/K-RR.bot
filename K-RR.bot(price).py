@@ -42,7 +42,7 @@ def price(item):
         now = datetime.now()
 
     if item == "oil":
-        message = "현재 시각 ", last_row[0] + "\n" + "{:,}".format(int(last_row[1]))
+        message = f"현재 시각 {last_row[0]}\n" + "{:,}".format(int(last_row[1]))
         return message
 
 
@@ -70,7 +70,8 @@ async def 가격(ctx):
 
 @app.command()
 async def 석유(ctx):
-    await ctx.send(price("oil"))
+    m = price("oil")
+    await ctx.send(m)
 
 
 @app.command()
