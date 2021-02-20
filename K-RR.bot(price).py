@@ -39,24 +39,31 @@ def price(item):
         now = datetime.now()
 
     m = f"현재 시각 {last_row[0]}\n"
-    if item == "oil":
-        m = m + f"{last_row[1]:,}"
+    if item == "가격":
+        for i in range(1, last_row):
+            m = m + f"{last_row[i]:,}\n"
+    elif item == "oil":
+        m = m + f"{last_row[item]:,}"
     elif item == "ore":
-        m = m + f"{last_row[2]:,}"
+        m = m + f"{last_row[item]:,}"
     elif item == "uranium":
-        m = m + f"{last_row[3]:,}"
+        m = m + f"{last_row[item]:,}"
     elif item == "diamonds":
         m = m + f"{last_row[item]:,}"
     elif item == "helium-3":
-        m = m + f"{last_row[3]:,}"
+        m = m + f"{last_row[item]:,}"
     elif item == "rivalium":
-        m = m + f"{last_row[3]:,}"
+        m = m + f"{last_row[item]:,}"
     elif item == "tanks":
-        m = m + f"{last_row[3]:,}"
+        m = m + f"{last_row[item]:,}"
     elif item == "aircrafts":
-        m = m + f"{last_row[3]:,}"
+        m = m + f"{last_row[item]:,}"
     elif item == "missiles":
-        m = m + f"{last_row[3]:,}"
+        m = m + f"{last_row[item]:,}"
+    elif item == "bombers":
+        m = m + f"{last_row[item]:,}"
+    elif item == "laser drones":
+        m = m + f"{last_row[item]:,}"
 
     return m
 
@@ -78,10 +85,7 @@ async def 안녕(ctx):
 
 @app.command()
 async def 가격(ctx):
-    price()
-    await ctx.send("현재 시각 " + last_row[
-        0] + " 자원 시세\n석유: " + oil_price + "\n광물: " + ore_price + "\n우라늄: " + uranium_price + "\n다이아몬드: " + diamonds_price + "\n헬륨: " + helium_price + "\n라이발륨: " + rivalium_price + "\n탱크: " + tanks_price + "\n전투기: " + aircrafts_price + "\n미사일:" + missiles_price + "\n폭격기: " + bombers_price + "\n드론: " + drones_price)
-
+    await ctx.send(price("가격"))
 
 @app.command()
 async def 석유(ctx):
@@ -104,44 +108,37 @@ async def 다이아몬드(ctx):
 
 @app.command()
 async def 헬륨(ctx):
-    price()
-    await ctx.send("현재 시각 " + last_row[0] + "\n" + helium_price)
+    await ctx.send(price("helium-3"))
 
 
 @app.command()
 async def 라이발륨(ctx):
-    price()
-    await ctx.send("현재 시각 " + last_row[0] + "\n" + rivalium_price)
+    await ctx.send(price("rivalium"))
 
 
 @app.command()
 async def 탱크(ctx):
-    price()
-    await ctx.send("현재 시각 " + last_row[0] + "\n" + tanks_price)
+    await ctx.send(price("tanks"))
 
 
 @app.command()
 async def 전투기(ctx):
-    price()
-    await ctx.send("현재 시각 " + last_row[0] + "\n" + aircrafts_price)
+    await ctx.send(price("aircrafts"))
 
 
 @app.command()
 async def 미사일(ctx):
-    price()
-    await ctx.send("현재 시각 " + last_row[0] + "\n" + missiles_price)
+    await ctx.send(price("missiles"))
 
 
 @app.command()
 async def 폭격기(ctx):
-    price()
-    await ctx.send("현재 시각 " + last_row[0] + "\n" + bombers_price)
+    await ctx.send(price("bombers"))
 
 
 @app.command()
 async def 드론(ctx):
-    price()
-    await ctx.send("현재 시각 " + last_row[0] + "\n" + drones_price)
+    await ctx.send(price("laser drones"))
 
 
 @app.command()
