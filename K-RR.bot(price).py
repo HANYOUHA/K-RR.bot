@@ -28,9 +28,6 @@ def price(item):
 
     if datetime.now() > now + timedelta(minutes=10):
         last_row = pd.read_csv(f_path).iloc[-1]
-        oil_price = "{:,}".format(int(last_row[1]))
-        ore_price = "{:,}".format(int(last_row[2]))
-        uranium_price = "{:,}".format(int(last_row[3]))
         diamonds_price = "{:,}".format(int(last_row[4]))
         helium_price = "{:,}".format(int(last_row[5]))
         rivalium_price = "{:,}".format(int(last_row[6]))
@@ -43,10 +40,22 @@ def price(item):
 
     m = f"현재 시각 {last_row[0]}\n"
     if item == "oil":
-        m = m + f"{int(last_row[1]):,}"
+        m = m + f"{last_row[1]:,}"
     elif item == "ore":
-        m = m + f"{int(last_row[2]):,}"
+        m = m + f"{last_row[2]:,}"
     elif item == "uranium":
+        m = m + f"{last_row[3]:,}"
+    elif item == "diamonds":
+        m = m + f"{last_row[item]:,}"
+    elif item == "helium-3":
+        m = m + f"{last_row[3]:,}"
+    elif item == "rivalium":
+        m = m + f"{last_row[3]:,}"
+    elif item == "tanks":
+        m = m + f"{last_row[3]:,}"
+    elif item == "aircrafts":
+        m = m + f"{last_row[3]:,}"
+    elif item == "missiles":
         m = m + f"{last_row[3]:,}"
 
     return m
@@ -91,9 +100,7 @@ async def 우라늄(ctx):
 
 @app.command()
 async def 다이아몬드(ctx):
-    price()
-    await ctx.send("현재 시각 " + last_row[0] + "\n" + diamonds_price)
-
+    await ctx.send(price("diamonds"))
 
 @app.command()
 async def 헬륨(ctx):
