@@ -5,22 +5,20 @@ import time
 import csv
 import pandas as pd
 
+f_path = "~/Documents/PriceLogger/price_list.csv"
+last_row = pd.read_csv(f_path).iloc[-1]
 
-def price():
-    f_path = "~/Documents/PriceLogger/price_list.csv"
-    last_row = pd.read_csv(f_path).iloc[-1]
-
-    oil_price = "{:,}".format(int(last_row[1]))
-    ore_price = "{:,}".format(int(last_row[2]))
-    uranium_price = "{:,}".format(int(last_row[3]))
-    diamonds_price = "{:,}".format(int(last_row[4]))
-    helium_price = "{:,}".format(int(last_row[5]))
-    rivalium_price = "{:,}".format(int(last_row[6]))
-    tanks_price = "{:,}".format(int(last_row[7]))
-    aircrafts_price = "{:,}".format(int(last_row[8]))
-    missiles_price = "{:,}".format(int(last_row[9]))
-    bombers_price = "{:,}".format(int(last_row[10]))
-    drones_price = "{:,}".format(int(last_row[11]))
+oil_price = "{:,}".format(int(last_row[1]))
+ore_price = "{:,}".format(int(last_row[2]))
+uranium_price = "{:,}".format(int(last_row[3]))
+diamonds_price = "{:,}".format(int(last_row[4]))
+helium_price = "{:,}".format(int(last_row[5]))
+rivalium_price = "{:,}".format(int(last_row[6]))
+tanks_price = "{:,}".format(int(last_row[7]))
+aircrafts_price = "{:,}".format(int(last_row[8]))
+missiles_price = "{:,}".format(int(last_row[9]))
+bombers_price = "{:,}".format(int(last_row[10]))
+drones_price = "{:,}".format(int(last_row[11]))
 
 app = commands.Bot(command_prefix='!')
 
@@ -37,77 +35,63 @@ async def 안녕(ctx):
 
 @app.command()
 async def 가격(ctx):
-    price()
-    drones_price = "{:,}".format(int(last_row[11]))
     await ctx.send("현재 시각 " + last_row[
         0] + " 자원 시세\n석유: " + oil_price + "\n광물: " + ore_price + "\n우라늄: " + uranium_price + "\n다이아몬드: " + diamonds_price + "\n헬륨: " + helium_price + "\n라이발륨: " + rivalium_price + "\n탱크: " + tanks_price + "\n전투기: " + aircrafts_price + "\n미사일:" + missiles_price + "\n폭격기: " + bombers_price + "\n드론: " + drones_price)
 
 
 @app.command()
 async def 석유(ctx):
-    price(last_row[0], oil_price)
     await ctx.send("현재 시각 " + last_row[0] + "\n" + oil_price)
 
 
 @app.command()
 async def 광물(ctx):
-    price(last_row[0], ore_price)
     await ctx.send("현재 시각 " + last_row[0] + "\n" + ore_price)
 
 
 @app.command()
 async def 우라늄(ctx):
-    price(last_row[0], uranium_price)
     await ctx.send("현재 시각 " + last_row[0] + "\n" + uranium_price)
 
 
 @app.command()
 async def 다이아몬드(ctx):
-    price(last_row[0], diamonds_pric)
     await ctx.send("현재 시각 " + last_row[0] + "\n" + diamonds_price)
 
 
 @app.command()
 async def 헬륨(ctx):
-    price(last_row[0], helium_price)
     await ctx.send("현재 시각 " + last_row[0] + "\n" + helium_price)
 
 
 @app.command()
 async def 라이발륨(ctx):
-    price(last_row[0], rivalium_price)
     await ctx.send("현재 시각 " + last_row[0] + "\n" + rivalium_price)
 
 
 @app.command()
 async def 탱크(ctx):
-    price(last_row[0], tanks_price)
     await ctx.send("현재 시각 " + last_row[0] + "\n" + tanks_price)
 
 
 @app.command()
 async def 전투기(ctx):
-    price(last_row[0], aircrafts_price)
     await ctx.send("현재 시각 " + last_row[0] + "\n" + aircrafts_price)
 
 
 @app.command()
 async def 미사일(ctx):
-    price(last_row[0], missiles_price)
     await ctx.send("현재 시각 " + last_row[0] + "\n" + missiles_price)
 
 
 @app.command()
 async def 폭격기(ctx):
-    price(last_row[0], bombers_price)
     await ctx.send("현재 시각 " + last_row[0] + "\n" + bombers_price)
 
 
 @app.command()
 async def 드론(ctx):
-    price(last_row[0], drones_price)
     await ctx.send("현재 시각 " + last_row[0] + "\n" + drones_price)
-
 
 
 @app.command()
