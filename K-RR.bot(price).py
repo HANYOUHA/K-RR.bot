@@ -47,7 +47,7 @@ def price(item):
     elif item == "ore":
         m = m + "{:,}".format(int(last_row[2]))
 
-    return message
+    return m
 
 
 app = commands.Bot(command_prefix='!')
