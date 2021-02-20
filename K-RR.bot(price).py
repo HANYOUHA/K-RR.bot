@@ -24,7 +24,7 @@ def price(item):
     if item == "가격":
         the_series = last_row[1:]
         for i in the_series:
-            m = m + f"{first_row} {i:,}\n"
+            m = m + f"{first_row.index} {i:,}\n"
     elif item == "oil":
         m = m + f"{last_row[item]:,}"
     elif item == "ore":
