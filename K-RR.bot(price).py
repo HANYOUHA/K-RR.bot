@@ -28,20 +28,13 @@ def price(item):
 
     if datetime.now() > now + timedelta(minutes=10):
         last_row = pd.read_csv(f_path).iloc[-1]
-        diamonds_price = "{:,}".format(int(last_row[4]))
-        helium_price = "{:,}".format(int(last_row[5]))
-        rivalium_price = "{:,}".format(int(last_row[6]))
-        tanks_price = "{:,}".format(int(last_row[7]))
-        aircrafts_price = "{:,}".format(int(last_row[8]))
-        missiles_price = "{:,}".format(int(last_row[9]))
-        bombers_price = "{:,}".format(int(last_row[10]))
-        drones_price = "{:,}".format(int(last_row[11]))
         now = datetime.now()
 
     m = f"현재 시각 {last_row[0]}\n"
     if item == "가격":
-        for i in range(1, last_row):
-            m = m + f"{last_row[i]:,}\n"
+        the_series = last_row[1:]
+        for i in the_series:
+            m = m + f"{i:,}\n"
     elif item == "oil":
         m = m + f"{last_row[item]:,}"
     elif item == "ore":
