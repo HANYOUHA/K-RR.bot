@@ -6,8 +6,8 @@ import csv
 import pandas as pd
 
 f_path = "~/Documents/PriceLogger/price_list.csv"
-first_row = pd.read_csv(f_path).iloc[0]
 last_row = pd.read_csv(f_path).iloc[-1]
+price_index = last_row.index[1:]
 
 now = datetime.now()
 
@@ -23,8 +23,8 @@ def price(item):
     m = f"현재 시각 {last_row[0]}\n"
     if item == "가격":
         the_series = last_row[1:]
-        for i in the_series:
-            m = m + f"{i.index} {i:,}\n"
+        for i, p in price_index, the_series:
+            m = m + f"{i} {p:,}\n"
     elif item == "oil":
         m = m + f"{last_row[item]:,}"
     elif item == "ore":
