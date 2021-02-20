@@ -41,9 +41,13 @@ def price(item):
         drones_price = "{:,}".format(int(last_row[11]))
         now = datetime.now()
 
+    m = f"현재 시각 {last_row[0]}\n"
     if item == "oil":
-        message = f"현재 시각 {last_row[0]}\n" + "{:,}".format(int(last_row[1]))
-        return message
+        m = m + f"{int(last_row[1]):,}"
+    elif item == "ore":
+        m = m + "{:,}".format(int(last_row[2]))
+
+    return message
 
 
 app = commands.Bot(command_prefix='!')
@@ -76,8 +80,7 @@ async def 석유(ctx):
 
 @app.command()
 async def 광물(ctx):
-    price()
-    await ctx.send("현재 시각 " + last_row[0] + "\n" + ore_price)
+    await ctx.send(price("ore"))
 
 
 @app.command()
