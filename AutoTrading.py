@@ -5,9 +5,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-
-
-  
 customa = 250
 
 sale = 100
@@ -15,10 +12,6 @@ sale = 100
 customz = 245
 
 count = 50
-
-
-
-
 
 driver = webdriver.Chrome(크롬 드라이버 경로)
 
