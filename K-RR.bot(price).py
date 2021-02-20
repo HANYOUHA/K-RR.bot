@@ -45,7 +45,9 @@ def price(item):
     if item == "oil":
         m = m + f"{int(last_row[1]):,}"
     elif item == "ore":
-        m = m + "{:,}".format(int(last_row[2]))
+        m = m + f"{int(last_row[2]):,}"
+    elif item == "uranium":
+        m = m + f"{last_row[3]:,}"
 
     return m
 
@@ -74,8 +76,7 @@ async def 가격(ctx):
 
 @app.command()
 async def 석유(ctx):
-    m = price("oil")
-    await ctx.send(m)
+    await ctx.send(price("oil"))
 
 
 @app.command()
@@ -86,7 +87,7 @@ async def 광물(ctx):
 @app.command()
 async def 우라늄(ctx):
     price()
-    await ctx.send("현재 시각 " + last_row[0] + "\n" + uranium_price)
+    await ctx.send(price("uranium"))
 
 
 @app.command()
