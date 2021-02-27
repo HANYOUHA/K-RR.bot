@@ -95,6 +95,10 @@ async def 헬륨(ctx):
 
 
 @app.command()
+async def 라이벌륨(ctx):
+    await ctx.send(price("rivalium"))
+
+@app.command()
 async def 라이발륨(ctx):
     await ctx.send(price("rivalium"))
 
