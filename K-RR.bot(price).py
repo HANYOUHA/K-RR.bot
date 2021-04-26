@@ -1,5 +1,5 @@
 import discord
-from discord.ext import commands
+from discord.ext import commands, tasks
 import asyncio
 from datetime import datetime, timedelta
 import csv
@@ -59,6 +59,17 @@ async def on_ready():
     print('connection was successful.')
     await app.change_presence(status=discord.Status.online, activity=None)
 
+@tasks.loop(minutes=10)
+async def aler():
+    # global app
+    # channel = app.get_channel(758970862107361311)
+    channel = await app.fetch_channel(758970862107361311)
+    # if (drone > p_drone):
+    # print(channel)
+    await channel.send("hi!")
+    await asyncio.sleep(30)
+
+aler.start()
 
 @app.command()
 async def 안녕(ctx):
