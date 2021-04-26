@@ -59,17 +59,31 @@ async def on_ready():
     print('connection was successful.')
     await app.change_presence(status=discord.Status.online, activity=None)
 
+
+# 10 minute cycle alarm function
 @tasks.loop(minutes=10)
 async def aler():
-    # global app
     # channel = app.get_channel(758970862107361311)
-    channel = await app.fetch_channel(758970862107361311)
-    # if (drone > p_drone):
-    # print(channel)
-    await channel.send("hi!")
+    channel = await app.fetch_channel(758970862107361311) # specific channel
+    print(channel)
+
+    # check outlier
+    pre_last_row = pd.read_csv(f_path).iloc[-2]
+    last_row = pd.read_csv(f_path).iloc[-1]
+    item = "laser drones"
+    x1 = pre_last_row[item]
+    x2 = last_row[item]
+
+    diff = x2 - x1
+    diff_rate = 100 * diff / x1
+
+    if (abs(diff_rate) >= 0.5):
+        m = f"가격기준 시각 {last_row[0]}\n"
+        m = m + f"{item}: 이전 가격: {x1}, 현재 가격: {x2}, {diff_rate}%만큼 변동"
+        await channel.send(m)
     await asyncio.sleep(30)
 
-aler.start()
+aler.start() # start function
 
 @app.command()
 async def 안녕(ctx):
